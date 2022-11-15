@@ -184,27 +184,27 @@ class Paths
 	inline static public function voices(song:String):Any
 	{
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase())'/Voices'));
 		if (file != null)
 		{
 			return file;
 		}
 		#end
 
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Voices.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase()}/Voices.$SOUND_EXT';
 	}
 
 	inline static public function inst(song:String):Any
 	{
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
+		var file:Sound = returnSongFile(modsSongs(song.toLowerCase())/'Inst'));
 		if (file != null)
 		{
 			return file;
 		}
 		#end
 
-		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
+		return 'songs:assets/songs/${song.toLowerCase()}/Inst.$SOUND_EXT';
 	}
 
 	inline static private function returnSongFile(file:String):Sound
@@ -249,7 +249,7 @@ class Paths
 			return imageToReturn;
 		#end
 
-		return getPath('images/$key.png', IMAGE);
+		return getPath('images/$key.png', IMAGE, library);
 	}
 
 	inline static public function font(key:String)
