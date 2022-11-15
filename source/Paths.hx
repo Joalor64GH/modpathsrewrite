@@ -184,7 +184,7 @@ class Paths
 	inline static public function voices(song:String):Any
 	{
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase()'/Voices'));
+		var file:Sound = returnSongFile(modsSongs${song.toLowerCase()}'/Voices'));
 		if (file != null)
 		{
 			return file;
@@ -197,7 +197,7 @@ class Paths
 	inline static public function inst(song:String):Any
 	{
 		#if MODS_ALLOWED
-		var file:Sound = returnSongFile(modsSongs(song.toLowerCase()/'Inst'));
+		var file:Sound = returnSongFile(modsSongs${song.toLowerCase()}/'Inst'));
 		if (file != null)
 		{
 			return file;
@@ -243,7 +243,7 @@ class Paths
 
 	inline static public function image(key:String, ?library:String):Dynamic
 	{
-		#if MODS
+		#if MODS_ALLOWED
 		var imageToReturn:FlxGraphic = addCustomGraphic(key);
 		if (imageToReturn != null)
 			return imageToReturn;
