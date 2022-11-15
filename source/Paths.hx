@@ -26,6 +26,7 @@ class Paths
 	public static var customSoundsLoaded:Map<String, Sound> = new Map();
 	public static var coolMods:ModsMenuState;
 	public static var customImagesLoaded:Map<String, Bool> = new Map<String, Bool>();
+	public static var localTrackedAssets:Array<String> = [];
 
 	public static var ignoredFolders:Array<String> = [
 		'characters', 
@@ -253,10 +254,6 @@ class Paths
 
 	inline static public function font(key:String)
 	{
-	}
-
-	inline static public function font(key:String)
-	{
 		#if MODS_ALLOWED
 		var file:String = modsFont(key);
 		if (FileSystem.exists(file))
@@ -290,11 +287,6 @@ class Paths
 	inline static public function getSparrowAtlas(key:String, ?library:String)
 	{
 		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
-	}
-
-	inline static public function getPackerAtlas(key:String, ?library:String)
-	{
-		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
 	}
 
 	inline static public function fileExists(key:String, type:AssetType, ?ignoreMods:Bool = false, ?library:String)
@@ -338,7 +330,7 @@ class Paths
 		return modFolder('data/' + key + '.json');
 	}
 
-	inline static public function modImage(key:String)
+	inline static public function modsImages(key:String)
 	{
 		return modFolder('images/' + key + '.png');
 	}
