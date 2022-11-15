@@ -20,8 +20,8 @@ import flash.media.Sound;
 class Paths
 {
 	inline public static final SOUND_EXT = #if web "mp3" #else "ogg" #end;
-	inline public static final VIDEO_EXT = "mp4"
-	inline public static final WEBM_EXT = "webm"
+	inline public static final VIDEO_EXT = "mp4";
+	inline public static final WEBM_EXT = "webm";
 	static public var modDir:String = null;
 	public static var customSoundsLoaded:Map<String, Sound> = new Map();
 	public static var coolMods:ModsMenuState;
